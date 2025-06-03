@@ -27,6 +27,7 @@
         <tbody>
             @foreach($products as $p)
                 <tr>
+                    <td><img src="{{ public_path('storage/products/'.$p->image) }}" width="50"></td>
                     <td>{{ $p->id }}</td>
                     <td>{{ $p->title }}</td>
                     <td>Rp {{ number_format($p->price, 0, ',', '.') }}</td>
