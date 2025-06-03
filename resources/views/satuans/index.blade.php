@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid px-4">
     <h1 class="mt-4">Data Satuan</h1>
-    <a href="{{ route('satuans.create') }}" class="btn btn-success mb-3">Tambah Satuan</a>
+    <a href="{{ route('satuans.create') }}" class="btn btn-success mb-3">ADD SATUAN</a>
 
     <table class="table table-bordered">
         <thead>

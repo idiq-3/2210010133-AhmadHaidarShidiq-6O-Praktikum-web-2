@@ -22,7 +22,6 @@
                 <th>Nama Produk</th>
                 <th>Harga</th>
                 <th>Stok</th>
-                <th>Kategori</th>
             </tr>
         </thead>
         <tbody>
@@ -32,7 +31,6 @@
                     <td>{{ $p->title }}</td>
                     <td>Rp {{ number_format($p->price, 0, ',', '.') }}</td>
                     <td>{{ $p->stock }}</td>
-                    <td>{{ $p->category->name ?? '-' }}</td>
                 </tr>
             @endforeach
         </tbody>

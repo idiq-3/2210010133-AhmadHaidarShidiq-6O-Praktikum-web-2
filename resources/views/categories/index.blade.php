@@ -10,9 +10,9 @@
     <div class="card mb-4">
         <div class="card-body">
             <div class="float-end">
-                <a href="{{ route('laporan.kategori') }}" class="btn btn-warning mb-3">PRINT KATEGORI</a>
+                <a href="{{ route('laporan.kategori') }}" class="btn btn-warning mb-3">PRINT CATEGORIES</a>
             </div>
-            <a href="{{ route('categories.create') }}" class="btn btn-success mb-3">Tambah Kategori</a>
+            <a href="{{ route('categories.create') }}" class="btn btn-success mb-3">ADD CATEGORIES</a>
             <table class="table table-bordered">
                 <thead>
                     <tr><th>ID</th><th>Nama</th><th>Aksi</th></tr>
