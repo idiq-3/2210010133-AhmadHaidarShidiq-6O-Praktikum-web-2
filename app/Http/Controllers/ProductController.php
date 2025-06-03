@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 //import model product
 use App\Models\Product;
@@ -163,5 +164,20 @@ class ProductController extends Controller
         $product->delete();
     // Redirect ke halaman index dengan pesan sukses
         return redirect()->route('products.index')->with(['success' => 'Data Berhasil Dihapus!']);
+    }
+
+    public function printPdf()
+    {
+        $products = product::all();
+
+        $data = [
+            'title' => 'Laporan Data Kategori',
+            'date' => now()->format('d-m-Y'),
+            'products' => $products
+        ];
+
+        // Ganti nama view ke folder laporan
+        $pdf = PDF::loadView('laporan.produk', $data)->setPaper('a4', 'portrait');
+        return $pdf->stream('Data_Kategori.pdf', ["Attachment" => false]);
     }
 }

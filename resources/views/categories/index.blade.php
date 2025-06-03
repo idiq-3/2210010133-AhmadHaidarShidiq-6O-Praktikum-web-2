@@ -9,6 +9,9 @@
     </ol>
     <div class="card mb-4">
         <div class="card-body">
+            <div class="float-end">
+                <a href="{{ route('laporan.kategori') }}" class="btn btn-warning mb-3">PRINT KATEGORI</a>
+            </div>
             <a href="{{ route('categories.create') }}" class="btn btn-success mb-3">Tambah Kategori</a>
             <table class="table table-bordered">
                 <thead>

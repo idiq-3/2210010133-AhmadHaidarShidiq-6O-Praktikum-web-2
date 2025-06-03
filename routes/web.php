@@ -24,3 +24,10 @@ Route::resource('categories', CategoryController::class);
 Route::resource('satuans', SatuanController::class);
 //customer
 Route::resource('customers', CustomerController::class);
+//pdf user
+Route::get('printpdf', [UserController::class,'printPDF'])->name('printuser');
+Route::get('printexcel', [UserController::class,'userExcel'])->name('exportuser');
+//pdf katefori
+Route::get('/laporan/kategori', [CategoryController::class, 'printPdf'])->name('laporan.kategori');
+//pdf produk
+Route::get('/laporan/produk', [ProductController::class, 'printPdf'])->name('laporan.produk');

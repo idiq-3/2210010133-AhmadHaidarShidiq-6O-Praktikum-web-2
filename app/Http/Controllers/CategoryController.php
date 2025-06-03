@@ -1,6 +1,6 @@
 <?php
 namespace App\Http\Controllers;
-
+use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -55,4 +55,21 @@ class CategoryController extends Controller
 
         return redirect()->route('categories.index')->with('success', 'Kategori berhasil dihapus');
     }
+
+    public function printPdf()
+    {
+        $categories = Category::all();
+
+        $data = [
+            'title' => 'Laporan Data Kategori',
+            'date' => now()->format('d-m-Y'),
+            'categories' => $categories
+        ];
+
+        // Ganti nama view ke folder laporan
+        $pdf = PDF::loadView('laporan.kategori', $data)->setPaper('a4', 'portrait');
+        return $pdf->stream('Data_Kategori.pdf', ["Attachment" => false]);
+    }
+
+
 }
